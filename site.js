@@ -13,16 +13,27 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 
 	// todo: create your "getNextQuestion" function
 	const getNextQuestion = async () => {
-	const response = await fetch('https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=multiple')
-	const json = await response.json()
-	const { question, correct_answer: correct, incorrect_answers: incorrect } = json.results[0]
-	const answers = shuffle([ ...incorrect, correct ])
-	return { question, answers, correct }
+
+		const response = await fetch('https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=multiple')
+
+		const json = await response.json()
+
+		const { question, correct_answer: correct, incorrect_answers: incorrect } = json.results[0]
+
+		const answers = shuffle([ ...incorrect, correct ])
+		
+		return { question, answers, correct }
 	}
 
-	console.log(getNextQuestion())
 
 	// todo: create your "renderQuestion" function
+
+
+	const renderQuestion = ({ question, answers, correct }) => { 
+		getNextQuestion()
+	}
+
+	
 
 	// todo: add the event listener to the "nextQuestion" button
 
