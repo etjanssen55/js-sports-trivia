@@ -47,7 +47,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 			answersElement.append('button')
 		})
 		
-		button.addEventListener("click", (answer) => {
+		button.addEventListener("click", async (answer) => {
 			if (answer === correct) {
 				button.classList.add('correct')
 				answersElement.querySelectorAll('button').forEach(b => b.disabled = true)
@@ -63,6 +63,13 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 	
 
 	// todo: add the event listener to the "nextQuestion" button
+
+	nextQuestionElement.addEventListener("click", async () => {
+		renderQuestion(await getNextQuestion())
+		nextQuestionElement.disabled = true
+		setTimeout(() => nextQuestionElement.disabled = false, 10000)
+
+	})
 
 })()
 
