@@ -31,8 +31,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 
 	const renderQuestion = ({ question, answers, correct }) => { 
 
-		//trying to create the question button
-		
+		//trying to add text to the questionElement p tag
 		questionElement.textContent = decodeHtml(question)
 
 		//clears answer element
