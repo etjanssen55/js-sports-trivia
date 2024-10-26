@@ -20,7 +20,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 
 		const answers = shuffle([ ...incorrect, correct ])
 
-		return { question, answers, correct }
+		return object = { question, answers, correct }
 
 		
 	}
@@ -29,15 +29,15 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 	// todo: create your "renderQuestion" function
 
 
-	const renderQuestion = ({ question, answers, correct }) => { 
+	const renderQuestion = (object) => { 
 
 		const q = questionElement.createElement('button')
-		q.textContent = decodeHtml(question)
+		q.textContent = decodeHtml(object.question)
 		questionElement.append(q)
 
 		answersElement.innerHTML = ''
 
-		answers.forEach(answer => {
+		object.forEach(answer => {
 			const a = answersElement.createElement('button')
 			a.textContent = decodeHtml(answer)
 			answersElement.append(a)
