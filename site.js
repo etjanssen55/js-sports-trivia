@@ -31,18 +31,21 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 
 	const renderQuestion = ({ question, answers, correct }) => { 
 
-		const q = questionElement.createElement('button')
-		q.textContent = decodeHtml(question)
-		questionElement.append(q)
+		//trying to create the question button
+		
+		questionElement.textContent = decodeHtml(question)
 
+		//clears answer element
 		answersElement.innerHTML = ''
 
+		//trying to cycle through the answers and create a button for each one
 		answers.forEach(answer => {
 			const a = answersElement.createElement('button')
 			a.textContent = decodeHtml(answer)
 			answersElement.append(a)
 		})
 		
+		//listens for a button click and checks if the answer is correct or not
 		button.addEventListener("click", async (answer) => {
 			if (answer === correct) {
 				button.classList.add('correct')
@@ -60,6 +63,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 
 	// todo: add the event listener to the "nextQuestion" button
 
+	//listens for a click on the nextQuestionElement and then runs renderQuestion. Also sets a timer to disable the button for 10 seconds
 	nextQuestionElement.addEventListener("click", async () => {
 		renderQuestion(await getNextQuestion())
 		nextQuestionElement.disabled = true
