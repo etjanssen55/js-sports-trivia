@@ -30,6 +30,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 
 
 	const renderQuestion = ({ question, answers, correct }) => { 
+		 getNextQuestion()
 
 
 		const q = document.createElement(questionElement)
