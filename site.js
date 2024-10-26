@@ -47,7 +47,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 			answersElement.append('button')
 		})
 		
-		button.addEventListener("click", (answer) {
+		button.addEventListener("click", (answer) => {
 			if (answer === correct) {
 				button.classList.add('correct')
 				answersElement.querySelectorAll('button').forEach(b => b.disabled = true)
