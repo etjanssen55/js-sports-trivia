@@ -39,7 +39,25 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 		q.textContent = decodeHtml(question)
 		p.append(q)
 
+		answersElement.innerHTML = ''
+
+		answers.forEach(answer => {
+			const a = document.createElement('button')
+			a.textContent = answers.answer
+			answersElement.append('button')
+		})
 		
+		button.addEventListener("click", (answer) {
+			if (answer === correct) {
+				button.classList.add('correct')
+				answersElement.querySelectorAll('button').forEach(b => b.disabled = true)
+				alert('Correct!')
+				return
+			}
+			
+			button.disabled = true
+			alert('Incorrect!')
+		})
 	}
 
 	
