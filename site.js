@@ -58,8 +58,6 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 		})
 	}
 
-	renderQuestion(await getNextQuestion)
-
 	// todo: add the event listener to the "nextQuestion" button
 
 	//listens for a click on the nextQuestionElement and then runs renderQuestion. Also sets a timer to disable the button for 10 seconds
