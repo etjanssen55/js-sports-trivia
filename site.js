@@ -58,7 +58,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 		})
 	}
 
-	
+	renderQuestion(await getNextQuestion)
 
 	// todo: add the event listener to the "nextQuestion" button
 
