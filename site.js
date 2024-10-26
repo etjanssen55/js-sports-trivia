@@ -27,12 +27,19 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 		
 	}
 
-	console.log(await getNextQuestion)
+	console.log(await getNextQuestion())
 	// todo: create your "renderQuestion" function
 
 
 	const renderQuestion = ({ question, answers, correct }) => { 
 		getNextQuestion()
+
+
+		const q = document.createElement(questionElement)
+		q.textContent = decodeHtml(question)
+		p.append(q)
+
+		
 	}
 
 	
