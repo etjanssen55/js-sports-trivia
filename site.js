@@ -31,8 +31,8 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 	// todo: create your "renderQuestion" function
 
 
-	const renderQuestion = ({ question, answers, correct }) => { 
-		getNextQuestion()
+	const renderQuestion = async ({ question, answers, correct }) => { 
+		await getNextQuestion()
 
 
 		const q = document.createElement(questionElement)
