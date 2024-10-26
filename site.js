@@ -24,10 +24,10 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 
 		return { question, answers, correct }
 
-		console.log(await getNextQuestion)
+		
 	}
 
-
+	console.log(await getNextQuestion)
 	// todo: create your "renderQuestion" function
 
 
