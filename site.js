@@ -1,4 +1,4 @@
-console.log('hi')
+
 
 // import the utility functions "decodeHtml" and "shuffle"
 import { decodeHtml, shuffle } from './utils.js' 
@@ -21,8 +21,10 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 		const { question, correct_answer: correct, incorrect_answers: incorrect } = json.results[0]
 
 		const answers = shuffle([ ...incorrect, correct ])
-		
+
 		return { question, answers, correct }
+
+		console.log(await getNextQuestion)
 	}
 
 
