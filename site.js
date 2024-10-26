@@ -30,19 +30,17 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 
 
 	const renderQuestion = ({ question, answers, correct }) => { 
-		 getNextQuestion()
 
-
-		const q = document.createElement(questionElement)
+		const q = questionElement.createElement('button')
 		q.textContent = decodeHtml(question)
-		p.append(q)
+		questionElement.append(q)
 
 		answersElement.innerHTML = ''
 
 		answers.forEach(answer => {
-			const a = document.createElement('button')
-			a.textContent = answers.answer
-			answersElement.append('button')
+			const a = answersElement.createElement('button')
+			a.textContent = decodeHtml(answer)
+			answersElement.append(a)
 		})
 		
 		button.addEventListener("click", async (answer) => {
