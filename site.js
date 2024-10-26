@@ -1,5 +1,3 @@
-
-
 // import the utility functions "decodeHtml" and "shuffle"
 import { decodeHtml, shuffle } from './utils.js' 
 
@@ -31,8 +29,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 	// todo: create your "renderQuestion" function
 
 
-	const renderQuestion = async ({ question, answers, correct }) => { 
-		await getNextQuestion()
+	const renderQuestion = ({ question, answers, correct }) => { 
 
 
 		const q = document.createElement(questionElement)
